@@ -1,0 +1,50 @@
+// custom variables and override bootstrap variables
+
+// colors
+$brand-primary: #438de0;
+$gray: #333;
+$white: #fff;
+
+// font
+$open-sans: 'Open Sans', Arial, Helvetica, sans-serif;
+$dejavu: 'dejavu_sans_monobold', Arial, Helvetica, sans-serif;
+
+// scaffolding
+$body-bg: #e9ebf0;
+$text-color: $gray;
+$link-color: $brand-primary;
+
+// typography
+$font-family-sans-serif: $open-sans;
+$font-size-base: 18px;
+$line-height-base: 1.667;
+$headings-font-weight: 700;
+
+// well
+$well-bg: #fafafa;
+$well-border: #fafafa;
+
+// btn
+$btn-primary-border: $brand-primary;
+$btn-border-radius-base: 0;
+$btn-border-radius-large: 0;
+
+// forms
+$input-color: $gray;
+$input-color-placeholder: $gray;
+$input-border: #dadce0;
+
+// table
+$table-bg: #fafafa;
+$table-border-color: #dadce0;
+
+// tooltips
+$tooltip-bg: rgba($white, 0.9);
+$tooltip-color: #707880;
+$tooltip-arrow-color: rgba($white, 0.9);
+$tooltip-opacity: 1;
+$tooltip-max-width: 180px;
+
+// breakpoint
+$screen-lg: 1400px;
+$screen-md: 1200px;

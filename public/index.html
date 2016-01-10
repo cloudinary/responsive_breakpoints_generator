@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Images Breakpoints Generator by Cloudinary</title>
+  <meta content="Efficiently analyze each hi-res image and find the best dimensions for embedding as responsive images in your site" name='description'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/breakpoints.css">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicon/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicon/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/favicon/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicon/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/images/favicon/apple-touch-icon-60x60.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/favicon/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/favicon/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/favicon/apple-touch-icon-152x152.png" />
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-196x196.png" sizes="196x196" />
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16" />
+  <link rel="icon" type="image/png" href="/images/favicon/favicon-128.png" sizes="128x128" />
+  <meta name="application-name" content="Responsive Images Breakpoints"/>
+  <meta name="msapplication-TileColor" content="#FFFFFF" />
+  <meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png" />
+  <meta name="msapplication-square70x70logo" content="/images/favicon/mstile-70x70.png" />
+  <meta name="msapplication-square150x150logo" content="/images/favicon/mstile-150x150.png" />
+  <meta name="msapplication-wide310x150logo" content="/images/favicon/mstile-310x150.png" />
+  <meta name="msapplication-square310x310logo" content="/images/favicon/mstile-310x310.png" />
+  <meta content='https://www.facebook.com/ResponsiveBreakpoints' property='og:url'>
+  <meta content='Responsive Breakpoints Generator' property='og:title'>
+  <meta content='website' property='og:type'>
+  <meta content="Responsive Breakpoints Generator" property='og:site_name'>
+  <meta content="The Responsive Image Breakpoints Generator efficiently analyzes each hi-res image and finds the best dimensions for embedding in your website" property='og:description'>
+  <meta content='http://responsivebreakpoints.com/responsive_breakpoints_logo_square.png' property='og:image'>
+  <meta content="Responsive Breakpoints Generator" itemprop='name'>
+  <meta content="The Responsive Image Breakpoints Generator efficiently analyzes each hi-res image and finds the best dimensions for embedding in your website" itemprop='description'>
+
+
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header" class="container-fluid">
+      <strong class="logo"><a href="/"><img src="images/logo.svg" height="73" width="149" alt="image description"></a></strong>
+      <strong class="logo-txt"><a href="/">Responsive Images Breakpoints Generator</a></strong>
+      <a href="#" class="social-opener"></a>
+      <div class="social-wrap">
+        <ul class="social-shares list-inline">
+          <li><div class="fb-like" data-href="https://www.facebook.com/ResponsiveBreakpoints/" data-width="150" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></li>
+          <li><a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://responsivebreakpoints.com" data-via="cloudinary" data-hashtags="responsive">Tweet</a></li>
+          <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://responsivebreakpoints.com"></div></li>
+          <li><script type="IN/Share" data-url="http://responsivebreakpoints.com" data-counter="right"></script></li>
+        </ul>
+      </div>
+    </header>
+    <main id="main" class="container-fluid">
+      <div class="intro-text">
+        <p>
+          Responsive web design requires you to decide what image versions to deliver for each specific image. You should avoid using the maximum hi-res image with browser-side resizing, and to also avoid creating dozens or even hundreds of different resized images for the various resolutions. 
+        </p>
+        <p>
+          This <strong>Responsive Image Breakpoints Generator</strong> uses <a href="http://cloudinary.com" target="_blank">Cloudinary's advanced algorithms</a> to efficiently analyze each hi-res image and find the best dimensions for embedding in your website. Only scaled down versions that significantly reduce the file size are selected, thus improving user experience and reducing costs. Try it out :-)
+          <a href="http://cloudinary.com" target="_blank">Learn more</a>
+        </p>          
+      </div>
+      <div class="well breakpoint-setting">
+        <div class="container-fluid">
+          <div class="col-md-6">
+            <div class="upload-img">
+              <span class="jcf-file jcf-pressed"  id="upload-widget-opener">
+                <span class="jcf-upload-button">
+                  <span class="jcf-button-content">Upload file</span>
+                </span>
+              </span>
+              <span id="breakpoints-processing">
+                <img src="images/loader.gif" width="160" height="96" alt="Processing...">
+                <span class="message">Generating breakpoints...</span>
+              </span>
+
+            </div>
+            <div class="or text-center">Or select one of the predefined images</div>
+            <ul class="list-inline img-list">
+              <li><label><input type="radio" name="choose image" data-image-info='{"public_id":"woman_glasses","format":"jpg","bytes":338299,"width":2400,"height":1600,"url":"http://res.cloudinary.com/responsivebreakpoints/image/upload/woman_glasses.jpg"}'><i><span><img src="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill,g_face/woman_glasses.jpg" srcset="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill,g_face,dpr_2.0/woman_glasses.jpg 2x" alt="Sample woman photo" width="124" height="74"></span></i></label></li>
+
+              <li><label><input type="radio" name="choose image" data-image-info='{"public_id":"castle","format":"jpg","bytes":521871,"width":2048,"height":1366,"url":"http://res.cloudinary.com/responsivebreakpoints/image/upload/castle.jpg"}'><i><span><img src="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill/castle.jpg" srcset="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill,dpr_2.0/castle.jpg 2x" alt="Sample castle photo" width="124" height="74"></span></i></label></li>
+
+
+
+              <li><label><input type="radio" name="choose image" data-image-info='{"public_id":"robot","format":"png","bytes":527648,"width":3161,"height":3220,"url":"http://res.cloudinary.com/responsivebreakpoints/image/upload/robot.png"}'><i><span><img src="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill/robot.png" srcset="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill,dpr_2.0/robot.png 2x" alt="Sample robot photo" width="124" height="74"></span></i></label></li>
+
+              <li><label><input type="radio" name="choose image" data-image-info='{"public_id":"dog","format":"jpg","bytes":537666,"width":3000,"height":2000,"url":"http://res.cloudinary.com/responsivebreakpoints/image/upload/dog.jpg"}'><i><span><img src="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill/dog.jpg" srcset="http://res.cloudinary.com/responsivebreakpoints/image/upload/w_124,h_74,c_fill,dpr_2.0/dog.jpg 2x" alt="Sample woman photo" width="124" height="74"></span></i></label></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h2 class="text-center">Breakpoints generation settings</h2>
+            <div class="row-block-wrap">
+              <form id="breakpoints-controls-form">
+                <div class="row-block range-section">
+                  <div class="title-wrap">
+                    <h3>Resolution <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="Select the minimum and maximum width values that you need for displaying the image in your responsive web site.">help</button></h3>
+                    <div class="pull-right form-input">
+                      <div class="col">
+                        <label for="from">From</label>
+                        <input type="text" id="from" name="min_width" class="form-control input-from">
+                      </div>
+                      <div class="col">
+                        <label for="to">To</label>
+                        <input type="text" id="to" name="max_width" class="form-control input-to">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider-range">
+                    <div class="slider">
+                      <input type="hidden" class="min-cur-val" value="200">
+                      <input type="hidden" class="max-cur-val" value="1000">
+                      <div id="slider-range"></div>
+                    </div>
+                    <ul class="range">
+                      <li>50</li>
+                      <li>200</li>
+                      <li>480</li>
+                      <li>1080</li>
+                      <li>2180</li>
+                      <li>3840</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row-block slider-size">
+                  <div class="title-wrap">
+                    <h3>Size jump <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="The performance budget. Only scaled down versions that reduce the file size by about this file size jump are selected.">help</button></h3>
+                    <div class="pull-right form-input">
+                      <div class="col">
+                        <label for="size">Size (KB)</label>
+                        <input type="text" id="size" name="bytes_step" class="form-control slider-input">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slider-range">
+                    <div class="slider">
+                      <input type="hidden" class="cur-val" value="20">
+                      <div class="slider-hold"></div>
+                    </div>
+                    <ul class="range">
+                      <li>5KB</li>
+                      <li>25KB</li>
+                      <li>45KB</li>
+                      <li>65KB</li>
+                      <li>85KB</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="row-block slider-images">
+                  <div class="row-col">
+                    <div class="title-wrap">
+                      <h3>Maximum images <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="Limit the number of selected breakpoints. Ensures that no more than the maximum images will be selected even if more versions can potentially be selected according to the size jump value.">help</button></h3>
+                      <div class="pull-right form-input">
+                        <div class="col">
+                          <label for="quantity">Quantity</label>
+                          <input type="text" id="quantity" name="max_images" class="form-control slider-input">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider-range">
+                      <div class="slider">
+                        <input type="hidden" class="cur-val" value="20">
+                        <div class="slider-hold"></div>
+                      </div>
+                      <ul class="range">
+                        <li>3</li>
+                        <li>10</li>
+                        <li>18</li>
+                        <li>25</li>
+                        <li>33</li>
+                        <li>40</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="row-col">
+                    <h3>Retina resolution</h3>
+                    <label class="check-box">
+                      <input type="checkbox" name="retina" value="1">
+                      <span class="fake-input">Include double resolution (DPR 2.0) Retina images</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="row-block ratio-block">
+                  <h3>Aspect ratio</h3>
+                  <div class="wrap">
+                    <ul class="ratio-list">
+                      <li>
+                        <label class="check-box">
+                          <input type="checkbox" checked="checked" value="original" name="aspect_ratio">
+                          <span class="fake-input">Original</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="check-box">
+                          <input type="checkbox" value="16:9" name="aspect_ratio">
+                          <span class="fake-input">16:9</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="check-box">
+                          <input type="checkbox" value="4:3" name="aspect_ratio">
+                          <span class="fake-input">4:3</span>
+                        </label>
+                      </li>
+                      <li>
+                        <label class="check-box">
+                          <input type="checkbox" value="1:1" name="aspect_ratio">
+                          <span class="fake-input">1:1</span>
+                        </label>
+                      </li>
+                      <li>
+                        <select name="aspect_ratio">
+                          <option class="hidden" value="">Other</option>
+                          <option value="2:1">2:1</option>
+                          <option value="21:9">21:9</option>
+                          <option value="3:2">3:2</option>
+                          <option value="2:3">2:3</option>
+                          <option value="3:4">3:4</option>
+                          <option value="9:16">9:16</option>
+                          <option value="9:21">9:21</option>
+                          <option value="1:2">1:2</option>
+                        </select>
+                      </li>
+                    </ul>
+                    <input type="submit" value="Re-generate" class="btn btn-primary" id="regenerate-button">
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="results-holder">
+      </div>
+    </main>
+    <div id="footer">
+      <div class="container-fluid footer-top">
+        <div class="row">
+          <article class="col-lg-6 col-md-8">
+            <h3>Automate responsive breakpoints generation</h3>
+            <p>This generator tool allows you to interactively generate responsive breakpoints. This is useful mainly for static content of your website. If your application involves user generated content with images dynamically uploaded to your site, you may want to streamline the breakpoints generation process. You can use <a href="http://cloudinary.com/documentation/upload_images" target="_blank">Cloudinary's API</a> to upload your images to the cloud and automatically generate breakpoints programmatically for all your images.</p>
+            <div class="tab-holder">
+              <ul class="nav nav-tabs text-uppercase">
+                <li class="active"><a href="#tab1" data-toggle="tab">Ruby on Rails</a></li>
+                <li><a href="#tab2" data-toggle="tab">Node.js</a></li>
+                <li><a href="#tab3" data-toggle="tab">PHP</a></li>
+                <li><a href="#tab4" data-toggle="tab">Python</a></li>
+              </ul>
+              <div class="tab-content">
+                <div id="tab1" class="tab-pane active">
+                  <code><kbd class="sname">Cloudinary</kbd>::<kbd class="sname">Uploader</kbd>.upload(<kbd class="name">"sample.jpg", </kbd><br><kbd class="space"></kbd><kbd>responsive_breakpoints</kbd>: { <kbd>create_derived</kbd>: <kbd class="prop">true</kbd>, <kbd>bytes_step</kbd>: <kbd class="prop">20000</kbd>, <kbd>min_width</kbd>: <kbd class="prop">200</kbd>, <kbd>max_width</kbd>: <kbd class="prop">1000</kbd> } )</code>
+                </div>
+
+
+                <div id="tab2" class="tab-pane">
+                  <code><kbd class="sname">cloudinary.uploader.v2.</kbd>upload(<kbd class="name">"sample.jpg", </kbd><br><kbd class="space"></kbd>{ <kbd>responsive_breakpoints</kbd>: { <kbd>create_derived</kbd>: <kbd class="prop">true</kbd>, <kbd>bytes_step</kbd>: <kbd class="prop">20000</kbd>, <kbd>min_width</kbd>: <kbd class="prop">200</kbd>, <kbd>max_width</kbd>: <kbd class="prop">1000</kbd> } }, <kbd class="sname">function(<kbd>error</kbd>, <kbd>result</kbd>) { console.log(<kbd>result</kbd>); }</kbd>);</code>
+                </div>
+
+                <div id="tab3" class="tab-pane">
+                  <code><kbd class="sname">\Cloudinary\Uploader::</kbd>upload(<kbd class="name">"sample.jpg", </kbd><br><kbd class="space"></kbd>array(<kbd>"responsive_breakpoints"</kbd> => array( <kbd>"create_derived"</kbd> => <kbd class="prop">true</kbd>, <kbd>"bytes_step"</kbd> => <kbd class="prop">20000</kbd>, <kbd>"min_width"</kbd> => <kbd class="prop">200</kbd>, <kbd>"max_width"</kbd> => <kbd class="prop">1000</kbd> )))</code>
+                </div>
+                <div id="tab4" class="tab-pane">
+                  <code><kbd class="sname">cloudinary.uploader.</kbd>upload(<kbd class="name">"sample.jpg", </kbd><br><kbd class="space"></kbd><kbd>responsive_breakpoints</kbd> = { <kbd>"create_derived"</kbd>: <kbd class="prop">true</kbd>, <kbd>"bytes_step"</kbd>: <kbd class="prop">20000</kbd>, <kbd>"min_width"</kbd>: <kbd class="prop">200</kbd>, <kbd>"max_width"</kbd>: <kbd class="prop">1000</kbd> } )</code>
+                </div>
+           
+
+              </div>
+            </div>
+            <p class="fz-lg">Cloudinary is the image back-end for web and mobile developers. An end-to-end solution for all your image-related needs. <a href="http://cloudinary.com" class="more" target="_blank">Learn more</a></p>
+          </article>
+          <div class="col-lg-6 col-md-4 text-center powered-by">
+            <strong class="title">Powered by</strong>
+            <a href="http://cloudinary.com" class="logo-footer" target="_blank"><img src="images/logo-cloudinary.png" height="73" width="342" alt="Cloudinary" class="img-responsive"></a>
+            <p>Image and video <br> management in the cloud</p>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <ul class="social-shares list-inline pull-left">
+          <li><div class="fb-like" data-href="https://www.facebook.com/ResponsiveBreakpoints/" data-width="150" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></li>
+          <li><a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://responsivebreakpoints.com" data-via="cloudinary" data-hashtags="responsive">Tweet</a></li>
+          <li><div class="g-plus" data-action="share" data-annotation="bubble" data-href="http://responsivebreakpoints.com"></div></li>
+          <li><script type="IN/Share" data-url="http://responsivebreakpoints.com" data-counter="right"></script>
+</li>
+        </ul>
+        <span class="terms pull-right"><a href="http://cloudinary.com/privacy" target="_blank">Privacy policy</a> and <a href="/tos" target="blank">Terms of service</a></span>
+      </footer>
+    </div>
+  </div>
+
+  <script id="results-template" type="text/x-handlebars-template">
+    <section class="results">
+      <header class="heading text-center">
+        <h1>Responsive Breakpoints Results</h1>
+        <p>Original image: {{info.width}}x{{info.height}} {{imageFormat}}, {{imageSize}}</p>
+      </header>
+      {{#each breakpointsResults}}
+        <div class="well ratio-aspect">
+          <h2 class="text-uppercase">{{aspectRatio transformation}} aspect Ratio</h2>
+          <div class="row">
+            <div class="col-md-6">
+              <figure class="photo">                
+                <img sizes="(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"                      
+                     alt="Sample responsive image" 
+                     srcset="
+                     {{#each this.reversed_breakpoints}}
+                     {{#if @last}}
+                     {{url}} {{width}}w
+                     {{else}}
+                     {{url}} {{width}}w,
+                     {{/if}}
+                     {{/each}}
+                     "               
+                     src="{{first this.breakpoints key="url"}}" 
+                     >
+                <figcaption>*You should try out to resize the browser window up and down to see the responsive behavior</figcaption>
+              </figure>
+            </div>
+            <div class="col-md-6 pull-right">
+              <table class="table">
+                <colgroup>
+                  <col class="col1">
+                  <col class="col2">
+                  <col class="col3">
+                  <col class="col4">
+                  <col class="col5">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>№</th>
+                    <th>Width</th>
+                    <th>Height</th>
+                    <th>File size</th>
+                    <th>&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each this.reversed_breakpoints}}
+                    <tr>
+                      <td>{{increment @index}}</td>
+                      <td>{{width}}</td>
+                      <td>{{height}}</td>
+                      <td>{{bytesToSize bytes}}</td>
+                      <td><a href="{{url}}" target="_blank">View image</a></td>
+                    </tr>                
+                  {{/each}}
+                </tbody>
+              </table>
+              <div class="image-sizes">
+                <img sizes="(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"                      
+                     alt="Sample responsive image" 
+                     srcset="
+                     {{#each this.reversed_breakpoints}}
+                     {{#if @last}}
+                     {{url}} {{width}}w
+                     {{else}}
+                     {{url}} {{width}}w,
+                     {{/if}}
+                     {{/each}}
+                     "               
+                     src="{{first this.breakpoints key="url"}}" 
+                     >
+
+                {{#each this.breakpoints}}
+                  <span class="size-1" style="width: {{width_percents}}%; height: {{height_percents}}%;"><span class="{{noTextClass ../breakpoints}}">{{width}}x{{height}} {{bytesToSize bytes}}</span></span>
+                {{/each}}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <h3>HTML5 img tag example</h3>
+              <div class="text-board">
+                <div class="line">
+                  <code class="tag">&lt;</code><code class="tag-name">img</code>
+                </div>
+                <div class="line">
+                  <code class="space"></code><code class="attribute">sizes</code><code class="tag">=</code>"(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"
+                </div>
+                <div class="line">
+                  <code class="space"></code><code class="attribute">srcset</code><code class="tag">=</code>"
+                  </div>
+                {{#each this.reversed_breakpoints}}
+                <div class="line">
+                    {{#if @last}}
+                    <code class="space"></code><code class="space"></code>{{shortFileName url}} {{width}}w"
+                    {{else}}
+                    <code class="space"></code><code class="space"></code>{{shortFileName url}} {{width}}w,
+                    {{/if}}
+                  </div>
+                {{/each}}
+
+
+                <div class="line">
+                  <code class="space"></code><code class="attribute">src</code><code class="tag">=</code>"{{first this.breakpoints key="url" helper="shortFileName"}}"<code class="tag">&gt;</code>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+
+
+
+      <div class="well ratio-aspect">
+        <h3>HTML5 picture tag example</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="text-board">
+              <div class="line">
+                <code class="tag">&lt;</code><code class="tag-name">picture</code><code class="tag">&gt;</code>
+              </div>
+              
+
+              {{#each reversedBreakpointsResults}}
+                {{#if @last}}
+
+                  <div class="line">
+                    <code class="space"></code><code class="tag">&lt;</code><code class="tag-name">img</code>
+                  </div>
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">sizes</code><code class="tag">=</code>"(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"
+                  </div>
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">srcset</code><code class="tag">=</code>"
+                    </div>
+                  {{#each this.reversed_breakpoints}}
+                  <div class="line">
+                      {{#if @last}}
+                      <code class="space"></code><code class="space"></code><code class="space"></code>{{shortFileName url}} {{width}}w"
+                      {{else}}
+                      <code class="space"></code><code class="space"></code><code class="space"></code>{{shortFileName url}} {{width}}w,
+                      {{/if}}
+                    </div>
+                  {{/each}}
+
+
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">src</code><code class="tag">=</code>"{{first this.breakpoints key="url" helper="shortFileName"}}"<code class="tag">&gt;</code>
+                  </div>
+
+              {{else}}
+
+                  <div class="line">
+                    <code class="space"></code><code class="tag">&lt;</code><code class="tag-name">source</code>
+                  </div>
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">media</code><code class="tag">=</code>"(max-width: {{samplePictureWidth @index}}px)"
+                  </div>
+
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">sizes</code><code class="tag">=</code>"(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"
+                  </div>
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">srcset</code><code class="tag">=</code>"
+                    </div>
+                  {{#each this.reversed_breakpoints}}
+                  <div class="line">
+                      {{#if @last}}
+                      <code class="space"></code><code class="space"></code><code class="space"></code>{{shortFileName url}} {{width}}w"<code class="tag">&gt;</code>
+                      {{else}}
+                      <code class="space"></code><code class="space"></code><code class="space"></code>{{shortFileName url}} {{width}}w,
+                      {{/if}}
+                    </div>
+                  {{/each}}
+
+
+              {{/if}}
+              {{/each}}
+
+
+              <div class="line">
+                <code class="tag">&lt;/</code><code class="tag-name">picture</code><code class="tag">&gt;</code>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="text-wrap">
+              <a href="#" class="btn btn-lg btn-primary pending" id="download-link">Download images</a>
+              <p>Download a ZIP files of all image versions matching the generated breakpoints listed above. The included images match the file names of the sample HTML5 image code.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </script>
+
+  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.main.js"></script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+  <script src="js/breakpoints.js"></script>
+  <script>
+    if (document.location.host.match(/localhost/)) {
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-25966579-3', 'auto');
+      ga('send', 'pageview');
+    }
+
+  </script>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=322099131162878";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+  <script src="//platform.linkedin.com/in.js" type="text/javascript" async defer> lang: en_US</script>
+
+
+</body>
+</html>

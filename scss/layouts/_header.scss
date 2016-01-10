@@ -1,0 +1,156 @@
+#header {
+  background: $brand-primary;
+  padding: 10px 15px;
+  color: $white;
+  position: relative;
+  box-shadow: 0 3px 3px rgba($gray-base, 0.12);
+
+  .logo {
+    float: left;
+    margin: 10px 138px 10px 30px;
+    width: 149px;
+
+    @include media('<lwide') {
+      margin-right: 46px;
+    }
+
+    @include media('<desktop') {
+      margin: 10px 41px 10px 14px;
+    }
+
+    @include media('<tablet') {
+      margin: 10px 12px 10px 20px;
+    }
+
+    @include media('<phone') {
+      margin: 10px 10px 10px 0;
+      width: 103px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      vertical-align: top;
+    }
+  }
+
+  .logo-txt {
+    float: left;
+    font-size: 35px;
+    line-height: 40px;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin-top: 24px;
+    width: 47%;
+
+    @include media('<lwide') {
+      margin-top: 5px;
+      width: 384px;
+    }
+
+    @include media('<tablet') {
+      font-size: 20px;
+      line-height: 30px;
+      width: 221px;
+      margin-top: 15px;
+    }
+
+    @include media('<phone') {
+      font-size: 12px;
+      line-height: 19px;
+      width: 136px;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .social-wrap {
+    text-align: right;
+    overflow: hidden;
+
+    @include media('<desktop') {
+      @include v-align(73px, middle, after);
+      position: absolute;
+      right: 93px;
+      top: 10px;
+      bottom: 10px;
+      left: 191px;
+      background: $brand-primary;
+      display: none;
+      text-align: left;
+      padding-top: 10px;
+    }
+
+    @include media('<tablet') {
+      left: 145px;
+      right: 57px;
+      overflow: visible;
+    }
+
+    @include media('<phone') {
+      left: 12px;
+      right: 48px;
+      padding-top: 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      right: 100%;
+      background: linear-gradient(to right, rgba(125,185,232,0) 0%,rgba(67,141,224,1) 100%);
+    }
+
+    .social-active & {
+      @include media('<desktop') {
+        display: block;
+      }
+    }
+  }
+
+  .social-shares {
+    margin: 32px 19px 0 0;
+
+    @include media('<lwide') {
+      margin-right: -10px;
+    }
+
+    @include media('<desktop') {
+      margin: 0;
+      max-width: 100%;
+    }
+  }
+
+  .social-opener {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #66aeff;
+    border-radius: 50%;
+    background: url(../images/ico-share.svg) no-repeat 9px 10px / 16px 16px;
+    float: right;
+    margin: 27px 15px 0px 0;
+
+    @include media('<desktop') {
+      display: block;
+    }
+
+    @include media('<tablet') {
+      margin: 26px 0 0;
+    }
+
+    @include media('<phone') {
+      margin: 15px -6px 0 0;
+    }
+
+    .social-active & {
+      background-image: url(../images/ico-cross.svg);
+      background-position: 10px 10px;
+    }
+  }
+}

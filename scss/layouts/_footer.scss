@@ -1,0 +1,153 @@
+#footer {
+  background: #30425c;
+
+  .footer-top {
+    background: #fafafa;
+    padding: 44px 15px 8px;
+
+    @include media('<desktop') {
+      padding-bottom: 11px;
+    }
+
+    @include media('<tablet') {
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 26px;
+      margin-bottom: 19px;
+      text-transform: uppercase;
+
+      @include media('<phone') {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      margin-bottom: 24px;
+
+      @include media('<desktop') {
+        margin-bottom: 25px;
+      }
+    }
+
+    article {
+      font-size: 16px;
+      line-height: 24px;
+      padding-left: 45px;
+
+      @include media('<desktop') {
+        padding: 0 25px;
+      }
+
+      @include media('<tablet') {
+        padding: 0 34px;
+      }
+
+      @include media('<phone') {
+        padding: 0 6px;
+        font-size: 14px;
+        line-height: 22px;
+      }
+    }
+
+    .fz-lg {
+      font-size: 18px;
+      line-height: 30px;
+
+      @include media('<tablet') {
+        margin-bottom: 16px;
+      }
+
+      @include media('<phone') {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .powered-by {
+    line-height: 24px;
+
+    @include media('<phone') {
+      font-size: 14px;
+    }
+
+    .title {
+      display: block;
+      color: #7a8999;
+      margin: 1px 0 9px;
+    }
+
+    .logo-footer {
+      display: inline-block;
+      vertical-align: top;
+      width: 250px;
+      margin-bottom: 17px;
+    }
+
+    p {
+      br {
+        @include media('<desktop') {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding: 31px 45px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+
+    @include media('<widescreen') {
+      padding-right: 15px;
+    }
+
+    @include media('<desktop') {
+      padding: 31px 30px;
+    }
+
+    @include media('<tablet') {
+      padding: 35px 34px 15px;
+    }
+
+    @include media('<phone') {
+      padding: 35px 15px 15px;
+      text-align: center;
+    }
+
+    .terms {
+      padding-top: 5px;
+      max-width: 32%;
+      text-align: right;
+
+      @include media('<tablet') {
+        line-height: 30px;
+        padding-top: 1px;
+      }
+
+      @include media('<phone') {
+        float: none !important;
+        max-width: none;
+      }
+    }
+  }
+
+  .social-shares {
+    max-width: 69%;
+
+    @include media('<phone') {
+      float: none !important;
+      max-width: none;
+    }
+
+    > li {
+      @include media('<tablet') {
+        padding: 0 10px 20px;
+      }
+    }
+  }
+}

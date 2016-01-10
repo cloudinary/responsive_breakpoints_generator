@@ -1,0 +1,204 @@
+.jcf-select {
+  display: block;
+  position: relative;
+  border: 2px solid #c2c5cc;
+  background: $white;
+  min-width: 72px;
+  height: 50px;
+
+  &.jcf-focus {
+    .jcf-select-opener {
+      background-image: url('../images/ico-arrow-h.svg');
+    }
+  }
+
+  select {
+    z-index: 1;
+    left: 0;
+    top: 0;
+  }
+
+  .jcf-select-text {
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: default;
+    display: block;
+    font-size: 14px;
+    line-height: 46px;
+    font-weight: 700;
+    margin: 0 17px 0 5px;
+    color: $brand-primary;
+  }
+
+  .jcf-select-opener {
+    width: 7px;
+    height: 14px;
+    position: absolute;
+    right: 5px;
+    top: 16px;
+    background: url('../images/ico-arrow.svg') no-repeat 0 0 / 7px 14px;
+
+    &:hover {
+      background-image: url('../images/ico-arrow-h.svg');
+    }
+  }
+
+  .jcf-select-drop {
+    position: absolute;
+    margin-top: 0px;
+    z-index: 9999;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+  }
+
+  .jcf-drop-flipped {
+    bottom: 100%;
+    top: auto;
+  }
+}
+
+body > .jcf-select-drop {
+  position: absolute;
+  margin: -1px 0 0;
+  z-index: 9999;
+}
+
+body > .jcf-select-drop.jcf-drop-flipped {
+  margin: 1px 0 0;
+}
+
+.jcf-select-drop .jcf-select-drop-content {
+  border: 1px solid #438de0;
+}
+
+.jcf-list-box {
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid #989ab3;
+  min-width: 200px;
+  margin: 0 15px;
+}
+
+.jcf-list {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  background: #438de0;
+  line-height: 14px;
+  font-size: 12px;
+  width: 100%;
+
+  .jcf-list-content {
+    vertical-align: top;
+    display: inline-block;
+    overflow: auto;
+    width: 100%;
+  }
+
+  ul {
+    @extend %listreset;
+
+    li {
+      overflow: hidden;
+      display: block;
+    }
+  }
+
+  .jcf-overflow {
+    overflow: auto;
+  }
+
+  .jcf-option {
+    overflow: hidden;
+    cursor: default;
+    display: block;
+    padding: 5px 9px;
+    color: $white;
+    height: 1%;
+  }
+
+  .jcf-option-hidden {display: none;}
+
+  .jcf-disabled {
+    background: #fff !important;
+    color: #aaa !important;
+  }
+
+  .jcf-optgroup-caption {
+    white-space: nowrap;
+    font-weight: bold;
+    display: block;
+    padding: 5px 9px;
+    cursor: default;
+    color: #000;
+  }
+
+  .jcf-optgroup .jcf-option {
+    padding-left: 30px;
+  }
+}
+
+.jcf-select-drop .jcf-hover,
+.jcf-list-box .jcf-selected {
+  background: #e6e6e6;
+  color: #438de0;
+}
+
+.jcf-disabled {background: #ddd !important;}
+
+.jcf-focus {border-color: $brand-primary;}
+
+
+/* custom file input styles */
+.jcf-file {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  background: $brand-primary;
+  cursor: pointer;
+  box-shadow: 4px 4px 6px rgba(#1b5fbf, 0.3);
+
+  &:hover {
+    background: darken($brand-primary, 15%);
+  }
+
+  .jcf-real-element {
+    position: absolute;
+    font-size: 200px;
+    height: 200px;
+    margin: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .jcf-fake-input {
+    display: none;
+  }
+
+  .jcf-upload-button {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 21px 17px;
+    text-align: center;
+    color: $white;
+    min-width: 370px;
+
+    @include media('<tablet') {
+      min-width: 320px;
+      padding: 16px 17px;
+    }
+
+    @include media('<phone') {
+      min-width: 190px;
+    }
+  }
+}

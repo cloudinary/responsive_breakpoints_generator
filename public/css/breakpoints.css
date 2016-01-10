@@ -1,0 +1,63 @@
+#results-holder {
+  margin-top: -30px;
+  padding-top: 30px;
+}
+.ratio-aspect .image-sizes img {
+  opacity: 0.5;
+}
+#breakpoints-processing {
+  display: none;
+}
+#breakpoints-processing .message {
+  display: block;
+  margin-top: 20px;
+  color: #999;
+  font-size: 20px;      
+}
+.breakpoint-setting.processing #upload-widget-opener {
+  display: none;      
+}
+.breakpoint-setting.processing #breakpoints-processing {
+  display: inline-block;
+}
+
+.breakpoint-setting #regenerate-button {
+  display: none;
+}
+.breakpoint-setting.processed #regenerate-button {
+  display: block;
+}
+.check-box {
+  cursor: pointer;
+}
+.slider .ui-widget-content {
+  height: 3px;
+  cursor: pointer;
+}
+.slider-range .slider .ui-slider-handle {
+ cursor: pointer; 
+}
+.ratio-aspect .image-sizes [class*='size-'] span {
+  width: 150px;
+  padding: 7px 10px 0 0;
+}
+
+.ratio-aspect .image-sizes [class*='size-'] span.no-text {
+  color: transparent;
+  text-shadow: none;
+}
+.ratio-aspect .image-sizes [class*='size-'] span.small-text {
+  font-weight: normal;
+  font-size: 11px;
+  padding: 2px 5px 0 0;
+}
+#download-link.pending {
+  background-color: #eee;
+  border-color: #eee;
+  box-shadow: 4px 4px 6px rgba(191, 191, 191, .3);
+  cursor: default;
+}
+
+.social-shares>li {
+  min-width: 130px;
+}
