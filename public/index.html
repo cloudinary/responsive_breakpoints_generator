@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Images Breakpoints Generator by Cloudinary</title>
+  <title>Responsive Image Breakpoints Generator by Cloudinary</title>
   <meta content="Efficiently analyze each hi-res image and find the best dimensions for embedding as responsive images in your site" name='description'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'>
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16" />
   <link rel="icon" type="image/png" href="/images/favicon/favicon-128.png" sizes="128x128" />
-  <meta name="application-name" content="Responsive Images Breakpoints"/>
+  <meta name="application-name" content="Responsive Image Breakpoints"/>
   <meta name="msapplication-TileColor" content="#FFFFFF" />
   <meta name="msapplication-TileImage" content="/images/favicon/mstile-144x144.png" />
   <meta name="msapplication-square70x70logo" content="/images/favicon/mstile-70x70.png" />
@@ -35,7 +35,7 @@
   <meta content='website' property='og:type'>
   <meta content="Responsive Breakpoints Generator" property='og:site_name'>
   <meta content="The Responsive Image Breakpoints Generator efficiently analyzes each hi-res image and finds the best dimensions for embedding in your website" property='og:description'>
-  <meta content='http://responsivebreakpoints.com/responsive_breakpoints_logo_square.png' property='og:image'>
+  <meta content='http://responsivebreakpoints.com/images/responsive_breakpoints_logo_square.png' property='og:image'>
   <meta content="Responsive Breakpoints Generator" itemprop='name'>
   <meta content="The Responsive Image Breakpoints Generator efficiently analyzes each hi-res image and finds the best dimensions for embedding in your website" itemprop='description'>
 
@@ -45,7 +45,7 @@
   <div id="wrapper">
     <header id="header" class="container-fluid">
       <strong class="logo"><a href="/"><img src="images/logo.svg" height="73" width="149" alt="image description"></a></strong>
-      <strong class="logo-txt"><a href="/">Responsive Images Breakpoints Generator</a></strong>
+      <strong class="logo-txt"><a href="/">Responsive Image Breakpoints Generator</a></strong>
       <a href="#" class="social-opener"></a>
       <div class="social-wrap">
         <ul class="social-shares list-inline">
@@ -57,14 +57,14 @@
       </div>
     </header>
     <main id="main" class="container-fluid">
-      <div class="intro-text">
+      <div class="intro-text">        
         <p>
-          Responsive web design requires you to decide what image versions to deliver for each specific image. You should avoid using the maximum hi-res image with browser-side resizing, and to also avoid creating dozens or even hundreds of different resized images for the various resolutions. 
+          Responsive web design requires developers to determine the image dimensions that best fit their website. This breakpoints generator tool helps developers automatically find the optimal image sizes needed for the best viewing experience in web and mobile apps on a variety of screen sizes.
         </p>
         <p>
-          This <strong>Responsive Image Breakpoints Generator</strong> uses <a href="http://cloudinary.com" target="_blank">Cloudinary's advanced algorithms</a> to efficiently analyze each hi-res image and find the best dimensions for embedding in your website. Only scaled down versions that significantly reduce the file size are selected, thus improving user experience and reducing costs. Try it out :-)
-          <a href="http://cloudinary.com" target="_blank">Learn more</a>
-        </p>          
+          The tool uses <strong>Cloudinary's advanced algorithms</strong> to easily generate best matching breakpoints for each image uploaded. The concept is to find image width values that offer significant reduction in file size. Images are analyzed to find the best breakpoints, rather than creating all possible image resolutions, and enables developers to easily create 'picture' and 'img' HTML5 elements based on the calculated breakpoints.
+          <a href="http://cloudinary.com" target="_blank">Learn more...</a>
+        </p>
       </div>
       <div class="well breakpoint-setting">
         <div class="container-fluid">
@@ -100,7 +100,7 @@
               <form id="breakpoints-controls-form">
                 <div class="row-block range-section">
                   <div class="title-wrap">
-                    <h3>Resolution <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="Select the minimum and maximum width values that you need for displaying the image in your responsive web site.">help</button></h3>
+                    <h3>Resolution <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="Select the minimum and maximum width values that you need for displaying the image in your responsive website.">help</button></h3>                    
                     <div class="pull-right form-input">
                       <div class="col">
                         <label for="from">From</label>
@@ -130,7 +130,8 @@
                 </div>
                 <div class="row-block slider-size">
                   <div class="title-wrap">
-                    <h3>Size jump <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="The performance budget. Only scaled down versions that reduce the file size by about this file size jump are selected.">help</button></h3>
+                    <h3>Size step <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="The performance budget. Only scaled down image versions that reduce the file size by approximately this amount are included.">help</button></h3>
+
                     <div class="pull-right form-input">
                       <div class="col">
                         <label for="size">Size (KB)</label>
@@ -155,7 +156,7 @@
                 <div class="row-block slider-images">
                   <div class="row-col">
                     <div class="title-wrap">
-                      <h3>Maximum images <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="Limit the number of selected breakpoints. Ensures that no more than the maximum images will be selected even if more versions can potentially be selected according to the size jump value.">help</button></h3>
+                      <h3>Maximum images <button type="button" class="help" data-toggle="tooltip" data-placement="right" title="Limit the number of images. Ensures that no more than this number of images will be included in the results, even if more versions can potentially be selected according to the size step value.">help</button></h3>                      
                       <div class="pull-right form-input">
                         <div class="col">
                           <label for="quantity">Quantity</label>
@@ -182,7 +183,7 @@
                     <h3>Retina resolution</h3>
                     <label class="check-box">
                       <input type="checkbox" name="retina" value="1">
-                      <span class="fake-input">Include double resolution (DPR 2.0) Retina images</span>
+                      <span class="fake-input">Include double resolution (DPR 2.0) images</span>
                     </label>
                   </div>
                 </div>
@@ -228,7 +229,7 @@
                         </select>
                       </li>
                     </ul>
-                    <input type="submit" value="Re-generate" class="btn btn-primary" id="regenerate-button">
+                    <input type="submit" value="Regenerate" class="btn btn-primary" id="regenerate-button">
                   </div>
                 </div>
               </form>
@@ -245,7 +246,8 @@
         <div class="row">
           <article class="col-lg-6 col-md-8">
             <h3>Automate responsive breakpoints generation</h3>
-            <p>This generator tool allows you to interactively generate responsive breakpoints. This is useful mainly for static content of your website. If your application involves user generated content with images dynamically uploaded to your site, you may want to streamline the breakpoints generation process. You can use <a href="http://cloudinary.com/documentation/upload_images" target="_blank">Cloudinary's API</a> to upload your images to the cloud and automatically generate breakpoints programmatically for all your images.</p>
+
+            <p>This <a href="https://github.com/cloudinary/responsive_breakpoints_generator">open source tool</a> enables you to interactively generate responsive image breakpoints. However, for applications that involve user generated content of images dynamically uploaded to your site, you may want to streamline the breakpoints generation process. You can use <a href="http://cloudinary.com/documentation/upload_images" target="_blank">Cloudinary's API</a> to upload your images to the cloud and automatically generate breakpoints programmatically. <a href="http://cloudinary.com" class="more" target="_blank">Learn more...  </a></p>
             <div class="tab-holder">
               <ul class="nav nav-tabs text-uppercase">
                 <li class="active"><a href="#tab1" data-toggle="tab">Ruby on Rails</a></li>
@@ -273,7 +275,7 @@
 
               </div>
             </div>
-            <p class="fz-lg">Cloudinary is the image back-end for web and mobile developers. An end-to-end solution for all your image-related needs. <a href="http://cloudinary.com" class="more" target="_blank">Learn more</a></p>
+            <p class="fz-lg">Cloudinary is the image back-end for web and mobile developers. An end-to-end solution for all your image-related needs. For more information visit <a href="http://cloudinary.com" class="more" target="_blank">cloudinary.com</a></p>
           </article>
           <div class="col-lg-6 col-md-4 text-center powered-by">
             <strong class="title">Powered by</strong>
@@ -307,7 +309,7 @@
           <div class="row">
             <div class="col-md-6">
               <figure class="photo">                
-                <img sizes="(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"                      
+                <img sizes="(max-width: 1200px) 100vw, 50vw"                      
                      alt="Sample responsive image" 
                      srcset="
                      {{#each this.reversed_breakpoints}}
@@ -320,7 +322,7 @@
                      "               
                      src="{{first this.breakpoints key="url"}}" 
                      >
-                <figcaption>*You should try out to resize the browser window up and down to see the responsive behavior</figcaption>
+                <figcaption>* Try and resize the browser window to see responsive behavior</figcaption>
               </figure>
             </div>
             <div class="col-md-6 pull-right">
@@ -354,7 +356,7 @@
                 </tbody>
               </table>
               <div class="image-sizes">
-                <img sizes="(max-width: {{first this.breakpoints key="width"}}px) 100vw, {{first this.breakpoints key="width"}}px"                      
+                <img sizes="(max-width: 1200px) 100vw, 50vw"                      
                      alt="Sample responsive image" 
                      srcset="
                      {{#each this.reversed_breakpoints}}
@@ -398,9 +400,14 @@
 
 
                 <div class="line">
-                  <code class="space"></code><code class="attribute">src</code><code class="tag">=</code>"{{first this.breakpoints key="url" helper="shortFileName"}}"<code class="tag">&gt;</code>
+                  <code class="space"></code><code class="attribute">src</code><code class="tag">=</code>"{{first this.breakpoints key="url" helper="shortFileName"}}"
+                </div>
+                <div class="line">
+                  <code class="space"></code><code class="attribute">alt</code><code class="tag">=</code>""<code class="tag">&gt;</code>
                 </div>
               </div>
+              <span class="note">* The <a href="http://blog.cloudfour.com/responsive-images-101-part-5-sizes/" target="blank" rel="nofollow">'sizes' attribute</a> in the HTML code should be adjusted to fit the actual dimensions in your page</span>            
+
             </div>
           </div>
         </div>
@@ -442,8 +449,11 @@
 
 
                   <div class="line">
-                    <code class="space"></code><code class="space"></code><code class="attribute">src</code><code class="tag">=</code>"{{first this.breakpoints key="url" helper="shortFileName"}}"<code class="tag">&gt;</code>
+                    <code class="space"></code><code class="space"></code><code class="attribute">src</code><code class="tag">=</code>"{{first this.breakpoints key="url" helper="shortFileName"}}"
                   </div>
+                  <div class="line">
+                    <code class="space"></code><code class="space"></code><code class="attribute">alt</code><code class="tag">=</code>""<code class="tag">&gt;</code>
+                  </div>                  
 
               {{else}}
 
@@ -483,7 +493,7 @@
           <div class="col-md-6">
             <div class="text-wrap">
               <a href="#" class="btn btn-lg btn-primary pending" id="download-link">Download images</a>
-              <p>Download a ZIP files of all image versions matching the generated breakpoints listed above. The included images match the file names of the sample HTML5 image code.</p>
+              <p>Download a ZIP file with all images generated and shown in the sample HTML5 code.</p>
             </div>
           </div>
         </div>

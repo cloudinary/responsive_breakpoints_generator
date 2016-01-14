@@ -61,3 +61,15 @@
 .social-shares>li {
   min-width: 130px;
 }
+
+.note {
+  padding-top: 10px;
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+}
+
+#footer .footer-top .fz-lg {
+  margin-top: 20px;
+  font-size: 20px;
+}
