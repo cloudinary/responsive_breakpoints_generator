@@ -59,12 +59,28 @@
     <main id="main" class="container-fluid">
       <div class="intro-text">        
         <p>
-          Responsive web design requires developers to determine the image dimensions that best fit their website. This breakpoints generator tool helps developers automatically find the optimal image sizes needed for the best viewing experience in web and mobile apps on a variety of screen sizes.
-        </p>
+          <strong>Easily generate the optimal responsive image dimensions</strong>
+        </p>          
         <p>
-          The tool uses <strong>Cloudinary's advanced algorithms</strong> to easily generate best matching breakpoints for each image uploaded. The concept is to find image width values that offer significant reduction in file size. Images are analyzed to find the best breakpoints, rather than creating all possible image resolutions, and enables developers to easily create 'picture' and 'img' HTML5 elements based on the calculated breakpoints.
-          <a href="http://cloudinary.com" target="_blank">Learn more...</a>
+          One image for all screen resolutions and different devices is too little. An image per pixel is too much - so how can someone automatically choose the optimal responsive image sizes? &nbsp;<a href="#intro-details" class="expand">Learn more...</a>
         </p>
+        <div id="intro-details">
+          <p>
+            Responsive websites, even the most modern ones, often struggle with selecting image resolutions that best match the various user devices. They compromise on either the image dimensions or the number of images. It's time to solve these issues and start calculating image breakpoints more mathematically, rather than haphazardly.
+          </p>
+          <p>
+            Responsive web design requires developers to determine the image dimensions that best fit their website. This breakpoints generator tool helps developers automatically find the optimal image sizes needed for the best viewing experience in web and mobile apps on a variety of screen sizes.
+          </p>
+          <p>
+            Common responsive image solutions tend to generate images based on a fixed set of image width values, disregarding the actual saving in file size bytes. To solve this problem, our breakpoint generator tool uses <a href="http://cloudinary.com">Cloudinary's advanced algorithms</a> to easily generate best matching breakpoints for each uploaded image. 
+          </p>
+          <p>
+            The algorithmic concept is to find image width values that offer a significant reduction in file size. Images are analyzed to find the best breakpoints on an image by image basis, rather than creating all possible image resolutions, and enables developers to easily create 'picture' and 'img' HTML5 elements based on the calculated breakpoints. 
+          </p>
+          <p>
+           Want to understand the technical details? &nbsp;<a href="http://cloudinary.com" target="_blank">Read more...</a>
+          </p>
+        </div>
       </div>
       <div class="well breakpoint-setting">
         <div class="container-fluid">
@@ -247,7 +263,7 @@
           <article class="col-lg-6 col-md-8">
             <h3>Automate responsive breakpoints generation</h3>
 
-            <p>This <a href="https://github.com/cloudinary/responsive_breakpoints_generator">open source tool</a> enables you to interactively generate responsive image breakpoints. However, for applications that involve user generated content of images dynamically uploaded to your site, you may want to streamline the breakpoints generation process. You can use <a href="http://cloudinary.com/documentation/upload_images" target="_blank">Cloudinary's API</a> to upload your images to the cloud and automatically generate breakpoints programmatically. <a href="http://cloudinary.com" class="more" target="_blank">Learn more...  </a></p>
+            <p>You can use <a href="http://cloudinary.com/documentation/upload_images" target="_blank">Cloudinary's API</a> to upload your images to the cloud and automatically generate breakpoints programmatically: 
             <div class="tab-holder">
               <ul class="nav nav-tabs text-uppercase">
                 <li class="active"><a href="#tab1" data-toggle="tab">Ruby on Rails</a></li>
@@ -275,12 +291,15 @@
 
               </div>
             </div>
-            <p class="fz-lg">Cloudinary is the image back-end for web and mobile developers. An end-to-end solution for all your image-related needs. For more information visit <a href="http://cloudinary.com" class="more" target="_blank">cloudinary.com</a></p>
+            <p>
+              This <a href="https://github.com/cloudinary/responsive_breakpoints_generator">open source tool</a> enables you to interactively generate responsive image breakpoints. However, for applications that involve user generated content of images dynamically uploaded to your site, you may want to streamline the breakpoints generation process. <a href="http://cloudinary.com" class="more" target="_blank">Learn more...  </a></p>
+            </p>
+            
           </article>
           <div class="col-lg-6 col-md-4 text-center powered-by">
             <strong class="title">Powered by</strong>
             <a href="http://cloudinary.com" class="logo-footer" target="_blank"><img src="images/logo-cloudinary.png" height="73" width="342" alt="Cloudinary" class="img-responsive"></a>
-            <p>Image and video <br> management in the cloud</p>
+            <p class="fz-lg">Cloudinary is the image back-end for web and mobile developers. An end-to-end solution for all your image-related needs. For more information visit <a href="http://cloudinary.com" class="more" target="_blank">cloudinary.com</a></p>
           </div>
         </div>
       </div>

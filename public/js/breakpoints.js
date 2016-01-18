@@ -236,6 +236,12 @@ function breakpointsController() {
         processImage(lastImageInfo);    
       }
     });
+
+    $('.expand').click(function(e) {
+      e.preventDefault();
+      $(this).hide();
+      $(document).find($(this).attr('href')).show();
+    });
   };
 
   var init = function() {

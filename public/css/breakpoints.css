@@ -74,3 +74,38 @@
   margin-top: 20px;
   font-size: 20px;
 }
+
+#intro-details {
+  display: none;
+}
+
+.intro-text {
+  padding: 21px 30px 15px;
+}
+
+@media (max-width: 1199px) {
+  .intro-text {
+    padding: 20px 20px 11px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  .intro-text {
+    padding: 18px 20px 10px;  
+  }
+}
+
+#footer .footer-top p {
+  margin-bottom: 18px;
+}
+
+#footer .footer-top .fz-lg {
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 0 10%;
+}
+
+.tab-holder {
+  margin-bottom: 16px;
+}
