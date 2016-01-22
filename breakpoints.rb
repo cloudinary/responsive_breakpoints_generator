@@ -6,12 +6,12 @@ require "cloudinary"
 
 
 get '/' do
-  cache_control :public, max_age: 600
+  cache_control :public, max_age: 3600
   File.read(File.join('public', 'index.html'))
 end
 
 get '/tos' do
-  cache_control :public, max_age: 600
+  cache_control :public, max_age: 25200
   File.read(File.join('public', 'tos.html'))
 end
 
