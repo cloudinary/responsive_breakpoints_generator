@@ -1,6 +1,14 @@
 {
-  "name": "grunt-with-node-sass",
-  "version": "0.9.8",
+  "name": "Responsive Image Breakpoints Generator",
+  "description": "The Responsive Breakpoints Generator enables you to interactively upload your images and define settings to find matching image dimensions that fit in your graphic design requirements.",
+  "version": "1.0",
+  "author": "Cloudinary",
+  "license": "MIT",  
+  "homepage": "http://www.responsivebreakpoints.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudinary/responsive_breakpoints_generator"
+  },  
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
