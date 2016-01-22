@@ -222,6 +222,7 @@ function breakpointsController() {
       upload_preset: 'ttuqmsbd', 
       theme: 'white', 
       multiple: false,
+      sources: ['local', 'url'],
       resource_type: 'image'
     }, function(error, result) {       
       processImage(result[0]);      
