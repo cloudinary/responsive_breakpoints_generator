@@ -88,6 +88,12 @@ function breakpointsController() {
     return (bytes / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i];
   };
 
+  var sendAnalyticsEvent = function(eventLabel) {
+    if (window.ga)  {
+      ga('send', 'event', 'Engagement', 'click', eventLabel);
+    }
+  };
+
   var prepareResponsiveCallAuthentication = function(imageInfo, callback) {
     var params = {};
     var retina = 0;
@@ -209,24 +215,29 @@ function breakpointsController() {
   };
 
   var initEventListners = function() {
+    // NOTE: If you clone the open source project, you should update 'cloud_name' 
+    // and 'upload_preset' to match your account settings.
     var uploadWidget = cloudinary.createUploadWidget({ 
       cloud_name: 'responsivebreakpoints', 
       upload_preset: 'ttuqmsbd', 
       theme: 'white', 
       multiple: false,
       resource_type: 'image'
-    }, function(error, result) { 
-      processImage(result[0]);
+    }, function(error, result) {       
+      processImage(result[0]);      
+      sendAnalyticsEvent("ImageUploaded");
     });
           
     $('#upload-widget-opener').click(function(e) { 
       e.preventDefault();
       uploadWidget.open();
+      sendAnalyticsEvent("WidgetOpened");
     });
 
     $('.img-list input[type=radio]').click(function(e) {
       $("html, body").animate({ scrollTop: $('.breakpoint-setting').offset().top }, 300);
       processImage($(this).data('image-info'));    
+      sendAnalyticsEvent("ImageSelected");
     });
 
     $('#regenerate-button').click(function(e) {
@@ -234,6 +245,7 @@ function breakpointsController() {
       if (lastImageInfo) {
         $("html, body").animate({ scrollTop: $('.breakpoint-setting').offset().top }, 300);
         processImage(lastImageInfo);    
+        sendAnalyticsEvent("Regenerated");
       }
     });
 
@@ -241,6 +253,7 @@ function breakpointsController() {
       e.preventDefault();
       $(this).hide();
       $(document).find($(this).attr('href')).show();
+      sendAnalyticsEvent("IntroExpanded");
     });
   };
 
