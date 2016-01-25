@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+require 'time'
+require "cloudinary"
+puts "Listing user uploads..."
+results = Cloudinary::Api.resources_by_tag('user_uploads', max_results: 500)["resources"]
+puts "Found #{results.length} matching images..."
+public_ids = results.reject{|r| Time.parse(r["created_at"]) > Time.now - 7*24*60*60}.map{|r| r["public_id"]}
+puts "Found #{public_ids.length} matching images of more than a week ago: #{public_ids.inspect}"
+if public_ids.length > 0
+ puts "Deleting..."
+ response = Cloudinary::Api.delete_resources(public_ids, invalidate: true)
+ puts "Completed deleting: #{response.inspect}"
+end
