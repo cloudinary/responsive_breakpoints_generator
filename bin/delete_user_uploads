@@ -2,7 +2,7 @@
 require 'time'
 require "cloudinary"
 puts "Listing user uploads..."
-results = Cloudinary::Api.resources_by_tag('user_uploads', max_results: 100)["resources"]
+results = Cloudinary::Api.resources_by_tag('user_uploads', direction: "asc", max_results: 100)["resources"]
 puts "Found #{results.length} matching images..."
 public_ids = results.reject{|r| Time.parse(r["created_at"]) > Time.now - 7*24*60*60}.map{|r| r["public_id"]}
 puts "Found #{public_ids.length} matching images of more than a week ago: #{public_ids.inspect}"
