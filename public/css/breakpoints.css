@@ -109,3 +109,65 @@
 .tab-holder {
   margin-bottom: 16px;
 }
+
+.breakpoint-setting .ratio-list .check-box .fake-input {
+  font-size: 10px;
+  padding: 18px 7px 8px 7px;
+}
+
+.breakpoint-setting .ratio-list .check-box .fake-input .resolution-note {
+  font-size: 9px;
+  display: block;
+  font-weight: normal;
+}
+
+.breakpoint-setting .ratio-list li:nth-child(1), .breakpoint-setting .ratio-list li:nth-child(2), .breakpoint-setting .ratio-list li:nth-child(3), .breakpoint-setting .ratio-list li:nth-child(4) {
+  width: 94px;
+}
+
+.breakpoint-setting .ratio-list .jcf-select {
+  height: 28px;
+  border-top: none;
+}
+.breakpoint-setting .ratio-list .jcf-select .jcf-select-text {
+  font-size: 12px;
+  line-height: 26px;  
+  text-align: center;
+}
+
+.breakpoint-setting .ratio-list .jcf-select .jcf-select-opener {
+  top: 5px;
+}
+
+
+.breakpoint-setting .or {
+  padding: 30px 15px 30px;
+}
+
+.ratio-aspect h2 .screen-size-details {
+  text-transform: none;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+@media (max-width: 767px) {
+  .breakpoint-setting .ratio-list {
+    width: 200px;
+  }
+  .breakpoint-setting .ratio-list li {
+    margin-bottom: 10px;
+  }
+}
+
+.picture-sample-section {
+  margin-top: -40px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.picture-sample-section h3 {
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 19px;
+  text-transform: uppercase;
+}

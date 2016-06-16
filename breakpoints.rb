@@ -17,23 +17,36 @@ end
 
 post "/authenticate" do  
   content_type :json 
-  aspect_ratios = params[:aspect_ratios].to_s.split(",")
+  aspect_ratios = params[:aspect_ratios]
   aspect_ratios = ["original"] if aspect_ratios.blank?
+  screen_sizes = params[:screen_sizes] || []
+  view_port_ratios = params[:view_port_ratios] || []
   breakpoints_settings = []
-  retina = params[:retina].to_s == '1'
-  aspect_ratios.each do |aspect_ratio|
-    settings = params[:breakpoints_settings].clone || {}    
+  retina = params[:retina].to_s == '1'  
+  aspect_ratios.each_with_index do |aspect_ratio, index|
+    settings = {}    
     settings[:create_derived] = true
-    settings.each do |k, v| 
+    [:min_width, :max_width, :bytes_step, :max_images].each do |k|
+      v = params[k]
       if v && v.is_a?(String) && v.match(/^\d+$/)
         settings[k] = v.to_i
       end
     end
-    settings["max_width"] = settings["max_width"]*2 if retina
-    settings[:transformation] = {:crop => :fill, :aspect_ratio => aspect_ratio} if aspect_ratio != 'original'
+    view_port_ratio = view_port_ratios[index] || 100
+    if screen_sizes[index]
+      min_width, max_width = screen_sizes[index].split(",").map{|size| (size.to_i * (view_port_ratio.to_i / 100.0)).ceil}
+      settings[:min_width] = min_width.to_i > 0 ? min_width : settings[:min_width]
+      settings[:max_width] = max_width.to_i > 0 ? [settings[:max_width], max_width].min : settings[:max_width]
+    end 
+
+    settings[:bytes_step] = settings[:bytes_step]*1024 if settings[:bytes_step]
+    settings[:max_width] = settings[:max_width]*2 if retina
+    
+    settings[:transformation] = {:crop => :fill, :aspect_ratio => aspect_ratio, :gravity => :auto} if aspect_ratio != 'original'
     breakpoints_settings << settings
   end
-  explicit_params = Cloudinary::Uploader.build_explicit_api_params(params[:public_id], type: :upload, responsive_breakpoints: breakpoints_settings)
+  explicit_params = Cloudinary::Uploader.build_upload_params(type: :upload, responsive_breakpoints: breakpoints_settings)
+  explicit_params[:public_id] = params[:public_id]
   explicit_params.reject!{|k, v| v.nil? || v=="" }
 
   {

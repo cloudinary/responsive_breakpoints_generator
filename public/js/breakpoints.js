@@ -8,6 +8,22 @@ function breakpointsController() {
     }
   };
 
+  var formToMap = function(selector) {
+    var formData = $(selector).serializeArray();
+    var data = {};
+    $(formData).each(function(index, item){
+        if (item.name.match(/\[\]/)) {
+          data[item.name] = data[item.name] || [];
+          data[item.name].push(item.value);
+        } else {
+          data[item.name] = item.value;  
+        }
+        
+    });
+    return data;
+  };
+
+
 
   var initHandlebars = function() {
     function shortFileName(value) {
@@ -45,12 +61,6 @@ function breakpointsController() {
         return value;
       }
 
-    });
-    Handlebars.registerHelper('aspectRatio', function(value) {
-      if (!value || value == '') {
-        return "original";
-      }
-      return value.match(/ar_(\d+:\d+)/)[1];
     });
     Handlebars.registerHelper('shortFileName', function(value) {
       return shortFileName(value);
@@ -94,32 +104,34 @@ function breakpointsController() {
     }
   };
 
-  var prepareResponsiveCallAuthentication = function(imageInfo, callback) {
-    var params = {};
-    var retina = 0;
-    var aspect_ratios = [];
-    log("Serialized form", $('#breakpoints-controls-form').serializeArray());
-    $.each($('#breakpoints-controls-form').serializeArray(), function(index, pair) {
-      if (pair.name == 'aspect_ratio') {
-        if (pair.value != '') {
-          aspect_ratios.push(pair.value);  
-        }      
-      } else if (pair.name == 'retina') {
-        retina = pair.value;
-      } else {
-        params[pair.name] = pair.value;  
-      }    
-    });
+  var selected_screen_sizes = [];
 
-    if (params.bytes_step) {
-      params.bytes_step = parseInt(params.bytes_step)*1024;
-    }
+  var prepareResponsiveCallAuthentication = function(imageInfo, callback) {
+    $('#breakpoints-controls-form #public_id').val(imageInfo.public_id);
+    var paramsMap = formToMap('#breakpoints-controls-form');
+    selected_screen_sizes = [];
+    log("paramsMap", paramsMap);
+    if (paramsMap["aspect_ratios[]"]) {
+      $.each(paramsMap["aspect_ratios[]"], function(index, aspect_ratio) {
+        var screenSize = paramsMap["screen_sizes[]"][index];
+        var screenSizeNumbers = screenSizePairToNumbers(screenSize);        
+        selected_screen_sizes[index] = {
+          aspect_ratio: aspect_ratio,
+          screen_size: screenSize,
+          screen_min_width: screenSizeNumbers[0],
+          screen_max_width: screenSizeNumbers[1],
+          screen_size_description: screenSizeNumbersToDescription(screenSizeNumbers[0], screenSizeNumbers[1]).toLowerCase(),
+          view_port_ratio: paramsMap["view_port_ratios[]"][index],
+          dpr: paramsMap["retina"] == '1' ? 2 : 1
+        }
+      });
+    }    
 
     $.ajax({
       url: '/authenticate',
       type: 'POST',
       dataType: 'json',
-      data: { public_id: imageInfo.public_id, aspect_ratios: aspect_ratios.join(","), retina: retina, breakpoints_settings: params },
+      data: $('#breakpoints-controls-form').serialize(),
       success: function(authenticationInfo) {
         log("authenticationInfo", authenticationInfo);
         callback(authenticationInfo);
@@ -168,13 +180,26 @@ function breakpointsController() {
   };
 
   var processBreakpoints = function(imageInfo, breakpointsInfo){
+    
     $.each(breakpointsInfo.responsive_breakpoints, function(index, item) {
+      var screen_size_info = selected_screen_sizes[index];
+      if (screen_size_info) {
+        $.extend(item, selected_screen_sizes[index]);  
+      } else {
+        item.aspect_ratio = "original";
+        item.view_port_ratio = 100;        
+      }      
+
       item.reversed_breakpoints = item.breakpoints.slice(0).reverse();
+      item.max_image_logical_width = item.breakpoints[0].width;
+      item.max_view_port_width = Math.round(item.max_image_logical_width / (item.view_port_ratio / 100.0));    
+
       $.map(item.reversed_breakpoints, function(breakpoint) {
         breakpoint.width_percents = (breakpoint.width / item.breakpoints[0].width) * 100;
         breakpoint.height_percents = (breakpoint.height / item.breakpoints[0].height) * 100;
       });
     });
+
     var model = {    
       info: breakpointsInfo,
       imageFormat: breakpointsInfo.format.toUpperCase(),
@@ -182,13 +207,16 @@ function breakpointsController() {
       breakpointsResults: breakpointsInfo.responsive_breakpoints,
       reversedBreakpointsResults: breakpointsInfo.responsive_breakpoints.slice(0).reverse(),
     };
+    log("model", model);
 
-    var source = $("#results-template").html();
-    var template = Handlebars.compile(source);
-
-    var html = template(model);
-    $('#results-holder').html(html);
-
+    $('#results-holder').html(Handlebars.compile($("#results-template").html())(model));
+    if (breakpointsInfo.responsive_breakpoints.length > 1) {
+      $('#picture-sample-holder').html(Handlebars.compile($("#picture-sample-template").html())(model));  
+    } else {
+      $('#picture-sample-holder').text('');
+    }
+    
+    
     prepareZIPDownloadURL(breakpointsInfo, function(zipInfo) {
       $('#download-link').attr("href", zipInfo.url).removeClass('pending');
     });
@@ -212,6 +240,56 @@ function breakpointsController() {
           $('.breakpoint-setting').removeClass('processing').addClass('processed');
         }
       });
+  };
+
+  var screenSizeNumbersToDescription = function(minWidth, maxWidth) {
+    if (minWidth && maxWidth) {
+      return "Width: " + minWidth + "-" + maxWidth;
+    } else if (minWidth) {
+      return "Width >= " + minWidth;
+    } else if (maxWidth) {
+      return "Width < " + maxWidth;
+    } else {
+      return "Any width";
+    }              
+  };
+
+  var screenSizePairToNumbers = function(pairString) {
+    var numbers = pairString.split(",");
+    if (numbers[0] === "") {
+      numbers[0] = null;
+    }
+    if (numbers[1] === "") {
+      numbers[1] = null;
+    }
+    return numbers;
+  };
+
+  var updateScreenSizes = function() {
+      var max_defined = false;
+      $('#breakpoints-controls-form .screen-sizes').each(function() {
+        $this = $(this);        
+        var note = "-";
+        var value = ","
+        if ($this.is(':checked')) {
+          var next_checked  = $($this.closest("li").nextAll("li").find('.screen-sizes:checked')[0]);
+
+          var min_width;              
+          var max_width;
+          if (next_checked.length > 0) {
+            min_width = next_checked.data('max-width')+1;                                    
+          }
+          if (max_defined) {
+            max_width = $this.data('max-width');  
+          }
+          
+          max_defined = true;
+          note = screenSizeNumbersToDescription(min_width, max_width);
+          value = (min_width || "") + "," + (max_width || "");
+        }
+        $this.closest('.check-box').find('.resolution-note').html(note);
+        $this.val(value);
+      });    
   };
 
   var initEventListners = function() {
@@ -256,6 +334,28 @@ function breakpointsController() {
       $(document).find($(this).attr('href')).show();
       sendAnalyticsEvent("IntroExpanded");
     });
+
+    $('.ratio-list input[type=checkbox]').change(function(e) {
+      var select = $(this).closest('li').find('select');
+      select.prop('disabled', !select.prop('disabled'));
+      jcf.getInstance(select[0]).refresh();
+      jcf.getInstance(select[1]).refresh();
+      updateScreenSizes();
+    });
+
+    $(window).resize(function(e) {
+      if (document.location.hash == '#live-picture-sample' && $('.picture-sample-section').length > 0) {
+        $('html, body').animate({scrollTop: $('.picture-sample-section h3').position().top}, 10);  
+      }
+      
+    });
+
+    if (window.location.search.indexOf('screen_size=all') != -1) {            
+      $('.ratio-list input[type=checkbox]').prop('checked', true);
+      $('.ratio-list li select').prop('disabled', false);
+      jcf.refreshAll();
+      updateScreenSizes();
+    }
   };
 
   var init = function() {
