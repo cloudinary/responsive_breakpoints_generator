@@ -301,9 +301,11 @@ function breakpointsController() {
       multiple: false,
       sources: ['local', 'url'],
       resource_type: 'image'
-    }, function(error, result) {       
-      processImage(result[0]);      
-      sendAnalyticsEvent("ImageUploaded");
+    }, function(error, result) { 
+      if (!error) {
+        processImage(result[0]);      
+        sendAnalyticsEvent("ImageUploaded");        
+      }
     });
           
     $('#upload-widget-opener').click(function(e) { 

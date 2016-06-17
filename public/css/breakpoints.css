@@ -171,6 +171,9 @@
   margin-bottom: 19px;
   text-transform: uppercase;
 }
+.picture-sample-section picture, .picture-sample-section img {
+  max-width: 100%;
+}
 
 #header .logo-txt {
   font-size: 33px;
@@ -195,4 +198,8 @@
   line-height: 16px;
   font-style: italic;    
   text-transform: none;
+}
+
+.ratio-aspect .text-board {
+  word-break: break-all;
 }
