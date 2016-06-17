@@ -24,7 +24,6 @@ function breakpointsController() {
   };
 
 
-
   var initHandlebars = function() {
     function shortFileName(value) {
       var match = value.match(/\/image\/upload\/(.*)\/v\d+\/(.*)\.(.*)$/);
@@ -309,11 +308,20 @@ function breakpointsController() {
           
     $('#upload-widget-opener').click(function(e) { 
       e.preventDefault();
+      if ($('.breakpoint-setting').hasClass('processing')) {
+        log("Processing in progress");
+        return;
+      }
       uploadWidget.open();
       sendAnalyticsEvent("WidgetOpened");
     });
 
     $('.img-list input[type=radio]').click(function(e) {
+      if ($('.breakpoint-setting').hasClass('processing')) {
+        log("Processing in progress");
+        return;
+      }
+
       $("html, body").animate({ scrollTop: $('.breakpoint-setting').offset().top }, 300);
       processImage($(this).data('image-info'));    
       sendAnalyticsEvent("ImageSelected");

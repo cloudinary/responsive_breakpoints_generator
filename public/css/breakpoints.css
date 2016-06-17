@@ -171,3 +171,28 @@
   margin-bottom: 19px;
   text-transform: uppercase;
 }
+
+#header .logo-txt {
+  font-size: 33px;
+}
+
+@media (max-width: 767px) {
+  #header .logo-txt {
+    font-size: 20px;
+    width: 241px;
+  }
+}
+
+@media (max-width: 479px) {
+  #header .logo-txt {
+    font-size: 12px;
+    line-height: 19px;
+    width: 156px;
+  }
+}
+.version-note {
+  font-size: 11px;
+  line-height: 16px;
+  font-style: italic;    
+  text-transform: none;
+}

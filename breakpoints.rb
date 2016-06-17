@@ -22,7 +22,8 @@ post "/authenticate" do
   screen_sizes = params[:screen_sizes] || []
   view_port_ratios = params[:view_port_ratios] || []
   breakpoints_settings = []
-  retina = params[:retina].to_s == '1'  
+  retina = params[:retina].to_s == '1' 
+   
   aspect_ratios.each_with_index do |aspect_ratio, index|
     settings = {}    
     settings[:create_derived] = true
@@ -45,6 +46,7 @@ post "/authenticate" do
     settings[:transformation] = {:crop => :fill, :aspect_ratio => aspect_ratio, :gravity => :auto} if aspect_ratio != 'original'
     breakpoints_settings << settings
   end
+
   explicit_params = Cloudinary::Uploader.build_upload_params(type: :upload, responsive_breakpoints: breakpoints_settings)
   explicit_params[:public_id] = params[:public_id]
   explicit_params.reject!{|k, v| v.nil? || v=="" }

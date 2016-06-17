@@ -394,7 +394,7 @@ function initMobileNav() {
 		// crossbrowser style handling
 		var addCSSRule = function(selector, rules, index) {
 			if (styleSheet.insertRule) {
-				styleSheet.insertRule(selector + '{' + rules + '}', index);
+				styleSheet.insertRule(selector + '{' + rules + '}', index || 0);
 			} else {
 				styleSheet.addRule(selector, rules, index);
 			}
