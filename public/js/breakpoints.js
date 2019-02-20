@@ -301,9 +301,10 @@ function breakpointsController() {
       multiple: false,
       sources: ['local', 'url'],
       resource_type: 'image'
-    }, function(error, result) { 
-      if (!error) {
-        processImage(result[0]);      
+    }, function(error, result) {
+      log("Upload widget callback: ", error, result);
+      if (!error && result && result.event === "success") {
+        processImage(result.info);
         sendAnalyticsEvent("ImageUploaded");        
       }
     });
