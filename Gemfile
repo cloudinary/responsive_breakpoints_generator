@@ -1,8 +1,12 @@
 source 'http://rubygems.org'
-ruby "2.2.5"
+ruby "2.5.8"
 
-gem 'json'
-gem 'puma'
+
+
 gem 'sinatra', "~> 1.4.6"
 gem 'cloudinary', "~> 1.21.0"
 
+
+gem "json", "~> 2.6.1"
+
+gem "puma", "~> 5.5.2"
