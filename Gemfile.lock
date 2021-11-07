@@ -18,7 +18,7 @@ GEM
     nio4r (2.5.8)
     puma (5.5.2)
       nio4r (~> 2.0)
-    rack (1.6.4)
+    rack (1.6.13)
     rack-protection (1.5.3)
       rack
     rest-client (2.1.0)
