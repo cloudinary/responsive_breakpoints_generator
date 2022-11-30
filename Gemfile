@@ -3,7 +3,7 @@ ruby "2.5.8"
 
 
 
-gem 'sinatra', "~> 1.4.6"
+gem 'sinatra', "~> 2.2.3"
 gem 'cloudinary', "~> 1.21.0"
 
 
