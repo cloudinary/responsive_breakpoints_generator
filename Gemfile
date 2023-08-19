@@ -9,4 +9,4 @@ gem 'cloudinary', "~> 1.21.0"
 
 gem "json", "~> 2.6.1"
 
-gem "puma", "~> 5.5.2"
+gem "puma", "~> 5.6.7"

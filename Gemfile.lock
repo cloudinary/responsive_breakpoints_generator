@@ -15,8 +15,8 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0901)
     netrc (0.11.0)
-    nio4r (2.5.8)
-    puma (5.5.2)
+    nio4r (2.5.9)
+    puma (5.6.7)
       nio4r (~> 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -41,7 +41,7 @@ PLATFORMS
 DEPENDENCIES
   cloudinary (~> 1.21.0)
   json (~> 2.6.1)
-  puma (~> 5.5.2)
+  puma (~> 5.6.7)
   sinatra (~> 1.4.6)
 
 RUBY VERSION
